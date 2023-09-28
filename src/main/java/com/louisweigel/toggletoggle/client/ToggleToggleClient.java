@@ -18,16 +18,18 @@ public class ToggleToggleClient implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-        sprintKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("sprint.toggletoggle", // The translation key of the keybinding's name
-                InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
-                GLFW.GLFW_KEY_M, // The keycode of the key
-                "toggletoggle.toggletoggle" // The translation key of the keybinding's category.
+        sprintKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.toggletoggle.sprint",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_M,
+                "category.toggletoggle.default"
         ));
 
-        sneakKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("sneak.toggletoggle", // The translation key of the keybinding's name
-                InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
-                GLFW.GLFW_KEY_K, // The keycode of the key
-                "toggletoggle.toggletoggle" // The translation key of the keybinding's category.
+        sneakKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.toggletoggle.sneak",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_K,
+                "category.toggletoggle.default"
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
